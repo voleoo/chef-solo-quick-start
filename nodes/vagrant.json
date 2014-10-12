@@ -1,3 +1,15 @@
 {
-  "run_list": []
+  "authorization": {
+    "sudo": {
+      "groups": ["vagrant", "deployer", "wheel", "sysadmin"],
+      "users": ["vagrant", "deployer"],
+      "passwordless": "false"
+    }
+  },
+  "users": ["deployer"],
+  "run_list": [
+    "recipe[chef-solo-search]",
+    "recipe[sudo]",
+    "recipe[users::sysadmins]"
+  ]
 }

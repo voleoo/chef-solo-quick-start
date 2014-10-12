@@ -1,0 +1,12 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    chef-solo-search (0.5.1)
+    sudo (2.7.1)
+    users (1.7.0)
+
+DEPENDENCIES
+  chef-solo-search (>= 0)
+  sudo (>= 0)
+  users (>= 0)
+
