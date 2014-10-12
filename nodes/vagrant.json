@@ -7,9 +7,16 @@
     }
   },
   "users": ["deployer"],
+  "nginx": {
+    "version": "1.7.6",
+    "default_site_enabled": false,
+    "source": { "modules": [ "nginx::http_gzip_static_module" ] }
+  },
   "run_list": [
     "recipe[chef-solo-search]",
     "recipe[sudo]",
-    "recipe[users::sysadmins]"
+    "recipe[users::sysadmins]",
+    "recipe[nginx::source]",
+    "recipe[qs-nginx]"
   ]
 }

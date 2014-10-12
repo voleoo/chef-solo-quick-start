@@ -5,6 +5,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise64"
   config.omnibus.chef_version = :latest
 
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
   VAGRANT_JSON = JSON.parse(Pathname(__FILE__).dirname.join('nodes', 'vagrant.json').read)
 
   config.vm.provision :chef_solo do |chef|
